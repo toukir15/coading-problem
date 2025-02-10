@@ -1,18 +1,13 @@
-// PW2.01.02 3Sum
+const removeDuplicates = function (nums) {
+    if (nums.length === 0) return 0;
 
+    let k = 1;
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[i - 1]) {
+            nums[k] = nums[i];
+        }
+    }
+    return k;
+};
 
-// const findThreeSum = (arr) => {
-//     let result = []
-//     for (let i = 0; i < arr.length; i++) {
-//         for (let j = 0; j < arr.length; j++) {
-//             for (let k = 0; k < arr.length; k++) {
-//                 if (i != j && i != k && j != k && (arr[i] + arr[j] + arr[k]) == 0) {
-//                     result.push([arr[i], arr[j], arr[k]])
-//                 }
-//             }
-//         }
-//     }
-//     console.log(result)
-// }
-// const nums = [-1, 0, 1, 2, -1, -4]
-// console.log(findThreeSum(nums))
+console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
